@@ -29,63 +29,24 @@
         </div>
     </li>
 
-    <s:textfield key="user.passwordHint" required="true" cssClass="text large"/>
+    <li>
+        <s:textfield key="user.website" required="true" cssClass="text large"/>
+    </li>
 
     <li>
         <div>
             <div class="left">
-                <s:textfield key="user.firstName" theme="xhtml" required="true" cssClass="text medium"/>
-            </div>
-            <div>
                 <s:textfield key="user.lastName" theme="xhtml" required="true" cssClass="text medium"/>
             </div>
-        </div>
-    </li>
-
-    <li>
-        <div>
-            <div class="left">
-                <s:textfield key="user.email" theme="xhtml" required="true" cssClass="text medium"/>
-            </div>
             <div>
-                <s:textfield key="user.phoneNumber" theme="xhtml" cssClass="text medium"/>
+                 <s:textfield key="user.firstName" theme="xhtml" required="true" cssClass="text medium"/>
             </div>
         </div>
     </li>
 
-    <s:textfield key="user.website" required="true" cssClass="text large"/>
 
-    <li>
-        <label class="desc"><fmt:message key="user.address.address"/></label>
-        <div class="group">
-            <div>
-                <s:textfield key="user.address.address" theme="xhtml" cssClass="text large" labelposition="bottom"/>
-            </div>
-            <div class="left">
-                <s:textfield key="user.address.city" theme="xhtml" required="true" cssClass="text medium" 
-                    labelposition="bottom"/>
-            </div>
-            <div>
-                <s:textfield key="user.address.province" theme="xhtml" required="true" cssClass="text state" 
-                    labelposition="bottom"/>
-            </div>
-            <div class="left">
-                <s:textfield key="user.address.postalCode" theme="xhtml" required="true" cssClass="text medium" 
-                    labelposition="bottom"/>
-            </div>
-            <div>
-                <s:set name="country" value="user.address.country" scope="page"/>
-                <appfuse:country name="user.address.country" prompt="" default="${country}"/>
-                <p>
-                    <label for="user.address.country">
-                        <fmt:message key="user.address.country"/> <span class="req">*</span>
-                    </label>
-                </p>
-            </div>
-        </div>
-    </li>
     <li class="buttonBar bottom">
-        <s:submit key="button.register" cssClass="button"/>
+        <s:submit key="button.register" name="register" cssClass="button"/>
         <s:submit key="button.cancel" name="cancel" cssClass="button"/>
     </li>
 </s:form>

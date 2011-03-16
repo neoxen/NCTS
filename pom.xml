@@ -5,9 +5,9 @@
     <groupId>com.ncts</groupId>
     <artifactId>NCTS</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>AppFuse Struts 2 Application</name>
-    <url>http://www.mycompany.com</url>
+    <version>1.0</version>
+    <name>Net Trading Supervision</name>
+    <url>http://www.whhd.gov.cn</url>
 
     <prerequisites>
         <maven>2.2.1</maven>
@@ -180,6 +180,7 @@
                             </includes>
                         </scanTargetPattern>
                     </scanTargetPatterns>
+                    <webDefaultXml>src/main/resources/webdefault.xml</webDefaultXml>
                 </configuration>
             </plugin>
             <plugin>
@@ -198,13 +199,13 @@
                         </goals>
                         <configuration>
                             <encoding>UTF8</encoding>
-                            <includes>ApplicationResources_ko.properties,
-                                ApplicationResources_no.properties,
-                                ApplicationResources_tr.properties,
+                            <includes>
+                                displaytag_zh*.properties,
+                                errors_zh*.properties,
                                 ApplicationResources_zh*.properties</includes>
                         </configuration>
                     </execution>
-                    <execution>
+                    <!--execution>
                         <id>native2ascii-8859_1</id>
                         <goals>
                             <goal>native2ascii</goal>
@@ -216,7 +217,7 @@
                                 ApplicationResources_nl.properties,
                                 ApplicationResources_pt*.properties</includes>
                         </configuration>
-                    </execution>
+                    </execution-->
                 </executions>
             </plugin>
         </plugins>
@@ -224,13 +225,8 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-                    <exclude>ApplicationResources_de.properties</exclude>
-                    <exclude>ApplicationResources_fr.properties</exclude>
-                    <exclude>ApplicationResources_ko.properties</exclude>
-                    <exclude>ApplicationResources_nl.properties</exclude>
-                    <exclude>ApplicationResources_no.properties</exclude>
-                    <exclude>ApplicationResources_pt*.properties</exclude>
-                    <exclude>ApplicationResources_tr.properties</exclude>
+                    <exclude>displaytag_zh*.properties</exclude>
+                    <exclude>errors_zh*.properties</exclude>
                     <exclude>ApplicationResources_zh*.properties</exclude>
                     <exclude>applicationContext-resources.xml</exclude>
                     <exclude>struts.xml</exclude>
@@ -715,7 +711,7 @@
         </dependency>
     </dependencies>
 
-    <reporting>
+    <!-- reporting>
         <plugins>
             <plugin>
                 <artifactId>maven-changes-plugin</artifactId>
@@ -745,7 +741,7 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting -->
 
     <profiles>
         <profile>
@@ -982,7 +978,7 @@
 
         <!-- Application settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <copyright.year>2010</copyright.year>
+        <copyright.year>2011</copyright.year>
         <dao.framework>hibernate</dao.framework>
         <web.framework>struts</web.framework>
         <amp.genericCore>true</amp.genericCore>

@@ -1,7 +1,7 @@
 <% if (request.getAttribute("struts.valueStack") != null) { %>
 <%-- ActionError Messages - usually set in Actions --%>
 <s:if test="hasActionErrors()">
-    <div class="error" id="errorMessages">    
+    <div class="error" id="errorMessages">
       <s:iterator value="actionErrors">
         <img src="<c:url value="/images/iconWarning.gif"/>"
             alt="<fmt:message key="icon.warning"/>" class="icon" />
@@ -12,7 +12,7 @@
 
 <%-- FieldError Messages - usually set by validation rules --%>
 <s:if test="hasFieldErrors()">
-    <div class="error" id="errorMessages">    
+    <div class="error" id="errorMessages">
       <s:iterator value="fieldErrors">
           <s:iterator value="value">
             <img src="<c:url value="/images/iconWarning.gif"/>"
@@ -39,11 +39,7 @@
 <%-- Error Messages (on JSPs, not through Struts --%>
 <c:if test="${not empty errors}">
     <div class="error" id="errorMessages">
-        <c:forEach var="error" items="${errors}">
-            <img src="<c:url value="/images/iconWarning.gif"/>"
-                alt="<fmt:message key="icon.warning"/>" class="icon" />
-            <c:out value="${error}"/><br />
-        </c:forEach>
+        <fmt:message key="error.warning"/>
     </div>
     <c:remove var="errors" scope="session"/>
 </c:if>

@@ -77,7 +77,7 @@
 
         <action name="saveSignup" class="signupAction" method="save">
             <result name="input">/WEB-INF/pages/signup.jsp</result>
-            <result name="success" type="redirectAction">/mainMenu</result>
+            <result name="success">/</result>
         </action>
 
         <action name="editUser" class="userAction" method="edit">

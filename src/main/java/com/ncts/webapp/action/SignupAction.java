@@ -67,7 +67,7 @@ public class SignupAction extends BaseAction {
      * @throws Exception when bad things happen
      */
     public String save() throws Exception {
-        user.setEnabled(true);
+        user.setEnabled(false);
 
         // Set the default user role on this new user
         user.addRole(roleManager.getRole(Constants.USER_ROLE));
@@ -95,19 +95,19 @@ public class SignupAction extends BaseAction {
         getSession().setAttribute(Constants.REGISTERED, Boolean.TRUE);
 
         // log user in automatically
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-                user.getUsername(), user.getConfirmPassword(), user.getAuthorities());
-        auth.setDetails(user);
-        SecurityContextHolder.getContext().setAuthentication(auth);
+//        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+//                user.getUsername(), user.getConfirmPassword(), user.getAuthorities());
+//        auth.setDetails(user);
+//        SecurityContextHolder.getContext().setAuthentication(auth);
 
         // Send an account information e-mail
-        mailMessage.setSubject(getText("signup.email.subject"));
-
-        try {
-            sendUserMessage(user, getText("signup.email.message"), RequestUtil.getAppURL(getRequest()));
-        } catch (MailException me) {
-            addActionError(me.getMostSpecificCause().getMessage());
-        }
+//        mailMessage.setSubject(getText("signup.email.subject"));
+//
+//        try {
+//            sendUserMessage(user, getText("signup.email.message"), RequestUtil.getAppURL(getRequest()));
+//        } catch (MailException me) {
+//            addActionError(me.getMostSpecificCause().getMessage());
+//        }
 
         return SUCCESS;
     }

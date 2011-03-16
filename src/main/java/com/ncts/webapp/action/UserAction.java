@@ -69,7 +69,7 @@ public class UserAction extends BaseAction implements Preparable {
     public String delete() {
         userManager.removeUser(user.getId().toString());
         List<Object> args = new ArrayList<Object>();
-        args.add(user.getFullName());
+        args.add(user.getWebsite());
         saveMessage(getText("user.deleted", args));
 
         return SUCCESS;
@@ -180,7 +180,6 @@ public class UserAction extends BaseAction implements Preparable {
         } catch (UserExistsException e) {
             List<Object> args = new ArrayList<Object>();
             args.add(user.getUsername());
-            args.add(user.getEmail());
             addActionError(getText("errors.existing.user", args));
 
             // reset the version # to what was passed in
@@ -197,16 +196,16 @@ public class UserAction extends BaseAction implements Preparable {
         } else {
             // add success messages
             List<Object> args = new ArrayList<Object>();
-            args.add(user.getFullName());
+            args.add(user.getWebsite());
             if (isNew) {
                 saveMessage(getText("user.added", args));
                 // Send an account information e-mail
-                mailMessage.setSubject(getText("signup.email.subject"));
-                try {
-                    sendUserMessage(user, getText("newuser.email.message", args), RequestUtil.getAppURL(getRequest()));
-                } catch (MailException me) {
-                    addActionError(me.getCause().getLocalizedMessage());
-                }
+//                mailMessage.setSubject(getText("signup.email.subject"));
+//                try {
+//                    sendUserMessage(user, getText("newuser.email.message", args), RequestUtil.getAppURL(getRequest()));
+//                } catch (MailException me) {
+//                    addActionError(me.getCause().getLocalizedMessage());
+//                }
                 return SUCCESS;
             } else {
                 saveMessage(getText("user.updated.byAdmin", args));

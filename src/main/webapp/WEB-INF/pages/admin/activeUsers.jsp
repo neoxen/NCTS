@@ -17,13 +17,8 @@
     defaultsort="1" class="table" pagesize="50" requestURI="">
   
     <display:column property="username" escapeXml="true" style="width: 30%" titleKey="user.username" sortable="true"/>
-    <display:column titleKey="activeUsers.fullName" sortable="true">
-        <c:out value="${user.firstName} ${user.lastName}" escapeXml="true"/>
-        <c:if test="${not empty user.email}">
-        <a href="mailto:<c:out value="${user.email}"/>">
-            <img src="<c:url value="/images/iconEmail.gif"/>" 
-                alt="<fmt:message key="icon.email"/>" class="icon"/></a>
-        </c:if>
+    <display:column titleKey="user.website" sortable="true">
+        <c:out value="${user.website}" escapeXml="true"/>
     </display:column>
         
     <display:setProperty name="paging.banner.item_name" value="user" />
