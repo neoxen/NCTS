@@ -13,5 +13,17 @@
 
     <!-- Add new DAOs here -->
 
+    
+
+    <!--NctsApplicationManager-START-->
+    <bean id="nctsApplicationManager" class="com.ncts.service.impl.GenericManagerImpl">
+        <constructor-arg>
+            <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <constructor-arg value="com.ncts.model.NctsApplication"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <!--NctsApplicationManager-END-->
+
     <!-- Add new Managers here -->
 </beans>

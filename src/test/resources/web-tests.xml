@@ -9,7 +9,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload"
+        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload,NctsApplicationTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -209,4 +209,126 @@
             </steps>
         </webtest>
     </target>
+    
+    <!--NctsApplication-START-->
+    <!-- runs nctsApplication-related tests -->
+    <target name="NctsApplicationTests" depends="SearchNctsApplications,EditNctsApplication,SaveNctsApplication,AddNctsApplication,DeleteNctsApplication"
+            description="Call and executes all nctsApplication test cases (targets)">
+        <echo>Successfully ran all NctsApplication UI tests!</echo>
+    </target>
+
+    <!-- Verify the nctsApplications list screen displays without errors -->
+    <target name="SearchNctsApplications" description="Tests search for and displaying all nctsApplications">
+        <webtest name="searchNctsApplications">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View NctsApplication link" url="/nctsApplications.html"/>
+                <verifytitle description="we should see the nctsApplicationList title"
+                             text=".*${nctsApplicationList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit nctsApplication screen displays without errors -->
+    <target name="EditNctsApplication" description="Tests editing an existing NctsApplication's information">
+        <webtest name="editNctsApplication">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsApplication link" url="/editNctsApplication.html?applyId=-1"/>
+                <verifytitle description="we should see the nctsApplicationDetail title"
+                             text=".*${nctsApplicationDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a nctsApplication and then save -->
+    <target name="SaveNctsApplication" description="Tests editing and saving a nctsApplication">
+        <webtest name="saveNctsApplication">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsApplication link" url="/editNctsApplication.html?applyId=-1"/>
+                <verifytitle description="we should see the nctsApplicationDetail title"
+                             text=".*${nctsApplicationDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+                <setInputField description="set applyType" name="nctsApplication.applyType" value="1429953561"/>
+                <setInputField description="set auditStatus" name="nctsApplication.auditStatus" value="1942933441"/>
+                <setInputField description="set createDate" name="nctsApplication.createDate" value="UrDaVeGsXw"/>
+                <setInputField description="set destroyDate" name="nctsApplication.destroyDate" value="BnOiPaJeXy"/>
+                <setInputField description="set isValid" name="nctsApplication.isValid" value="149338949"/>
+                <setInputField description="set siteAddress" name="nctsApplication.siteAddress" value="IgTmIdAuRoCkNcAjRtPqPeRvJpHgPvNvDyZoLjQcNsNtGeYdZfEeOyWsFxNgOiNmOnRhNyUgExTjUiOgQiErSoLqMkPzIwDlGbMn"/>
+                <setInputField description="set siteDomains" name="nctsApplication.siteDomains" value="NcAtVrKxHuYqUtZeKoUkQaMdCsBtVuKlCwJmPvHvTcEhCjPnEoLzFvNgCpQnEeVeDkVzWgHaTbZdOyEiCeZnWrFjCiGtByJpIqWjOsUeReVvXtSpYiHrCkIlBwApZoJdNyOxYhJqVnEiYwXdZmMbYcYvCrQpHwGfPmVmIrQnDhAwJfMnUqIdCxEuSbOfNeMrIgTyOdIa"/>
+                <setInputField description="set siteIcpno" name="nctsApplication.siteIcpno" value="CeReTjJhKaRdDpSnGeMvAePoXwLnDhSzOsUaSdTfSpRmBaBkNw"/>
+                <setInputField description="set siteIp" name="nctsApplication.siteIp" value="WtUoLaAgXdBnEqH"/>
+                <setInputField description="set siteIsp" name="nctsApplication.siteIsp" value="WqVjTrAbDfFfCnJwAwPpQxSgYiEqHbUlApVfBjDfHbVdXuPgYoXjHmIhDlFvCzZlBaBaGsAlIsGaAwOtLjWsCoBaLjLjGyIyTfYz"/>
+                <setInputField description="set siteMail" name="nctsApplication.siteMail" value="LwJxLvGeBtAgNmQwUnAjTmTvGdZjMqDiXeViEwWtSzQmUbMtZnCnFsUbDrNeApEaFmVuCvEaTxRaAgMhYcVnNxJyLxAbTyDsAjUb"/>
+                <setInputField description="set siteName" name="nctsApplication.siteName" value="VjLjIoTaWnIcZlVcTrFeApUqDySxObJrEeHdTqGoWlNjSmBnYeVnGqCdDyEpZeGzSoIcGsQzTnPuTnVxFpOeSwHrIkFyMaYpGiXv"/>
+                <setInputField description="set siteOpenDay" name="nctsApplication.siteOpenDay" value="BtFuYkTcUf"/>
+                <setInputField description="set siteType" name="nctsApplication.siteType" value="1211995939"/>
+                <setInputField description="set snbxh" name="nctsApplication.snbxh" value="UfHfNuJbGzEiDwXwXdSbTxXyEkEtQm"/>
+                <setInputField description="set userId" name="nctsApplication.userId" value="JjYqUmZoNbUjCbUkAwFeXzUnIvWlDaDg"/>
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                             text=".*${nctsApplicationDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsApplication.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new NctsApplication -->
+    <target name="AddNctsApplication" description="Adds a new NctsApplication">
+        <webtest name="addNctsApplication">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/editNctsApplication.html"/>
+                <verifytitle description="we should see the nctsApplicationDetail title"
+                             text=".*${nctsApplicationDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+                <setInputField description="set applyType" name="nctsApplication.applyType" value="899962876"/>
+                <setInputField description="set auditStatus" name="nctsApplication.auditStatus" value="266180234"/>
+                <setInputField description="set createDate" name="nctsApplication.createDate" value="FaPbEiZsKp"/>
+                <setInputField description="set destroyDate" name="nctsApplication.destroyDate" value="PzIyGqMdOi"/>
+                <setInputField description="set isValid" name="nctsApplication.isValid" value="265236332"/>
+                <setInputField description="set siteAddress" name="nctsApplication.siteAddress" value="MtGvHqXxQxRwYmSjVgFcHaLtBgUfPrIiKpQsJfJcKkLdEvQfDaZlWlZqRdYpVnJmHbKcEbUlPjZyKoGmPjAuXwPgWyAuXhTyDwGj"/>
+                <setInputField description="set siteDomains" name="nctsApplication.siteDomains" value="GrCaBrHzCxYkBnAlUeQfYrZtIjXyUrMmOqCjEaTwKrKaIrDlQaTcSnPyPkHsAlSjWzZvPwWtRvXvBcMcHjBmCdRpGhLuYiZgOjJfOjVyZaBvNlRlYnPcSmLyBmFoRoRhSyGpIrRdWsQmApOeSoEkIrAcMrJzCsEsJaLnTrMmPiUhIgKlItFgSfOsIqIuZfKxYlAeHpXe"/>
+                <setInputField description="set siteIcpno" name="nctsApplication.siteIcpno" value="HqLlKgEtPiAyMkBgSeEoLdYvBxKfEfUhSqYqIwAuOpHjXzCgMq"/>
+                <setInputField description="set siteIp" name="nctsApplication.siteIp" value="AmLdBvSpGkVbKqY"/>
+                <setInputField description="set siteIsp" name="nctsApplication.siteIsp" value="LbKtLfYiBtMsEeEgKmYvRgLfBxWoBoCnKyLbGcVsDgGrTtAnUmVdRwTcMzMkEbGuTuEmRnAsUwGzPfTlCiNiZcTnXdJkUqXnFiXt"/>
+                <setInputField description="set siteMail" name="nctsApplication.siteMail" value="LiHpSnHeGmKaWxRdReBoCjRaStHpXtVoKgWuIlPyXoYqSgWzCsUjGdZtUaHfTzLyIuXnSnUvQfBqXlSfLpXtHcJbXoYhTwIbAvNf"/>
+                <setInputField description="set siteName" name="nctsApplication.siteName" value="ZdPlVkGmPmFiMtQuEwDsUyCuUeZeSyPuQyJiRmHvFrDqQjAbQfRxNzQwPdYwSiLgNlHdLwYzWcYdZlBtZjNgZeOsZwIoFvAqTyJw"/>
+                <setInputField description="set siteOpenDay" name="nctsApplication.siteOpenDay" value="KyPqIlVqBh"/>
+                <setInputField description="set siteType" name="nctsApplication.siteType" value="1606585571"/>
+                <setInputField description="set snbxh" name="nctsApplication.snbxh" value="HjPuNsBoAfSlHlIaEcWfJiDrUbCxBl"/>
+                <setInputField description="set userId" name="nctsApplication.userId" value="RsBaAqVwBvMvVsPaHuQhCiEfJxCsHxEu"/>
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="NctsApplication List appears if save successful"
+                             text=".*${nctsApplicationList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsApplication.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing nctsApplication -->
+    <target name="DeleteNctsApplication" description="Deletes existing NctsApplication">
+        <webtest name="deleteNctsApplication">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsApplication link" url="/editNctsApplication.html?applyId=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display NctsApplication List" text=".*${nctsApplicationList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsApplication.deleted}"/>
+            </steps>
+        </webtest>
+    </target>
+    <!--NctsApplication-END-->
 </project>

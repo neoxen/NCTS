@@ -33,7 +33,7 @@
             <value description="phone_number"></value>
             <value description="postal_code">80210</value>
             <value description="province">CO</value>
-            <value description="website">武汉市测试企业</value>
+            <value description="website">武汉测试企业</value>
             <value description="password_hint"><![CDATA[A male kitty.]]></value>
             <value description="version">1</value>
             <value description="account_enabled">1</value>
@@ -45,8 +45,8 @@
             <value description="id">-2</value>
             <value description="username">admin</value>
             <value description="password">d033e22ae348aeb5660fc2140aec35850c4da997</value>
-            <value description="first_name">管理员</value>
-            <value description="last_name">空</value>
+            <value description="first_name">管理人员</value>
+            <value description="last_name">信息中心</value>
             <value description="address"></value>
             <value description="city">Denver</value>
             <value description="country">US</value>
@@ -90,4 +90,112 @@
             <value description="role_id">-1</value>
         </row>
     </table>
+    
+    <!--NctsApplication-START-->
+    <table name="ncts_application">
+        <column>applyId</column>
+        <column>ApplyType</column>
+        <column>AuditComment</column>
+        <column>AuditStatus</column>
+        <column>CreateDate</column>
+        <column>CurrHandleDept</column>
+        <column>CurrHandler</column>
+        <column>DestroyDate</column>
+        <column>HandleTime</column>
+        <column>IsValid</column>
+        <column>NextHandleDept</column>
+        <column>OperID</column>
+        <column>SiteAddress</column>
+        <column>SiteDomains</column>
+        <column>SiteICPNo</column>
+        <column>SiteInfo</column>
+        <column>SiteIP</column>
+        <column>SiteISP</column>
+        <column>SiteMail</column>
+        <column>SiteName</column>
+        <column>SiteOpenDay</column>
+        <column>SiteType</column>
+        <column>SNBXH</column>
+        <column>UserID</column>
+    <row>
+        <value description="applyId">-1</value>
+        <value description="ApplyType">2035043147</value>
+        <value description="AuditComment">blablabla</value>
+        <value description="AuditStatus">1483360731</value>
+        <value description="CreateDate">PnWkRsVvIm</value>
+        <value description="CurrHandleDept">blablabla</value>
+        <value description="CurrHandler">blablabla</value>
+        <value description="DestroyDate">ZmLoGzLeKm</value>
+        <value description="HandleTime">2011-03-17</value>
+        <value description="IsValid">178672891</value>
+        <value description="NextHandleDept">blablabla</value>
+        <value description="OperID">blablabla</value>
+        <value description="SiteAddress">blablabla</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SiteICPNo">blablabla</value>
+        <value description="SiteInfo">blablabla</value>
+        <value description="SiteIP">TrXvLiGhNdUcCuY</value>
+        <value description="SiteISP">blablabla</value>
+        <value description="SiteMail">blablabla</value>
+        <value description="SiteName">blablabla</value>
+        <value description="SiteOpenDay">YbCwGeNmIr</value>
+        <value description="SiteType">1491994611</value>
+        <value description="SNBXH">RgQnEbMdAvTkMsVfBuStYeNlUhIrNc</value>
+        <value description="UserID">XkHfJpWrSmPrDfPwIyPsCvNcMhXcOcUp</value>
+    </row>
+    <row>
+        <value description="applyId">-2</value>
+        <value description="ApplyType">1347764916</value>
+        <value description="AuditComment">blablabla</value>
+        <value description="AuditStatus">849653442</value>
+        <value description="CreateDate">EnPdRfWaVx</value>
+        <value description="CurrHandleDept">blablabla</value>
+        <value description="CurrHandler">blablabla</value>
+        <value description="DestroyDate">TkLsGeYzDm</value>
+        <value description="HandleTime">2011-03-17</value>
+        <value description="IsValid">1183137387</value>
+        <value description="NextHandleDept">blablabla</value>
+        <value description="OperID">blablabla</value>
+        <value description="SiteAddress">blablabla</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SiteICPNo">blablabla</value>
+        <value description="SiteInfo">blablabla</value>
+        <value description="SiteIP">KxGhFbIsOiAuSnY</value>
+        <value description="SiteISP">blablabla</value>
+        <value description="SiteMail">blablabla</value>
+        <value description="SiteName">blablabla</value>
+        <value description="SiteOpenDay">TfDuTpJuRy</value>
+        <value description="SiteType">1370863822</value>
+        <value description="SNBXH">GmQtKnAjDbZbFuIbRrZpDbRjEnYrKk</value>
+        <value description="UserID">YaNePaFgXoRrAfBuDvIfVzVaAwSaUySw</value>
+    </row>
+    <row>
+        <value description="applyId">-3</value>
+        <value description="ApplyType">434684539</value>
+        <value description="AuditComment">blablabla</value>
+        <value description="AuditStatus">372406509</value>
+        <value description="CreateDate">HpUlGvRbHz</value>
+        <value description="CurrHandleDept">blablabla</value>
+        <value description="CurrHandler">blablabla</value>
+        <value description="DestroyDate">PqXuYkEkYa</value>
+        <value description="HandleTime">2011-03-17</value>
+        <value description="IsValid">2071485195</value>
+        <value description="NextHandleDept">blablabla</value>
+        <value description="OperID">blablabla</value>
+        <value description="SiteAddress">blablabla</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SiteICPNo">blablabla</value>
+        <value description="SiteInfo">blablabla</value>
+        <value description="SiteIP">LxSwTxQbAwJeAfC</value>
+        <value description="SiteISP">blablabla</value>
+        <value description="SiteMail">blablabla</value>
+        <value description="SiteName">blablabla</value>
+        <value description="SiteOpenDay">WhVbXhIhJy</value>
+        <value description="SiteType">953689155</value>
+        <value description="SNBXH">blablabla</value>
+        <value description="UserID">BlTvZqIwMaBgXwAdOgMiFtLzTvYeTuMu</value>
+    </row>
+    </table>
+    <!--NctsApplication-END-->
 </dataset>
+

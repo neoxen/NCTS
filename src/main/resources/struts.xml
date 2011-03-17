@@ -109,6 +109,26 @@
             <result name="success">/</result>
         </action>
 
+        
+
+        <!--NctsApplicationAction-START-->
+        <action name="nctsApplications" class="com.ncts.webapp.action.NctsApplicationAction" method="list">
+            <result>/WEB-INF/pages/nctsApplicationList.jsp</result>
+        </action>
+
+        <action name="editNctsApplication" class="com.ncts.webapp.action.NctsApplicationAction" method="edit">
+            <result>/WEB-INF/pages/nctsApplicationForm.jsp</result>
+            <result name="error">/WEB-INF/pages/nctsApplicationList.jsp</result>
+        </action>
+
+        <action name="saveNctsApplication" class="com.ncts.webapp.action.NctsApplicationAction" method="save">
+            <result name="input">/WEB-INF/pages/nctsApplicationForm.jsp</result>
+            <result name="cancel" type="redirectAction">nctsApplications</result>
+            <result name="delete" type="redirectAction">nctsApplications</result>
+            <result name="success" type="redirectAction">nctsApplications</result>
+        </action>
+        <!--NctsApplicationAction-END-->
+
         <!-- Add additional actions here -->
     </package>
 

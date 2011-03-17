@@ -40,3 +40,5 @@ Thumbs.db
 *.ipr
 *.iws
 *.ids
+
+target/

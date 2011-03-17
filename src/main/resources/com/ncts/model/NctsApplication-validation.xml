@@ -1,0 +1,84 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+    "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="nctsApplication.applyType">
+        <field-validator type="required">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.auditStatus">
+        <field-validator type="required">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.createDate">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.destroyDate">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.isValid">
+        <field-validator type="required">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteAddress">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteDomains">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteIcpno">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteIp">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteIsp">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteMail">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteName">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteOpenDay">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.siteType">
+        <field-validator type="required">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.snbxh">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+    <field name="nctsApplication.userId">
+        <field-validator type="requiredstring">
+            <message key="errors.required"/>
+        </field-validator>
+    </field>
+</validators> 

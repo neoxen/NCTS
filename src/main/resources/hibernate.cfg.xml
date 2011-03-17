@@ -5,5 +5,7 @@
     <session-factory>
         <mapping class="com.ncts.model.User"/>
         <mapping class="com.ncts.model.Role"/>
+    
+        <mapping class="com.ncts.model.NctsApplication"/>
     </session-factory>
 </hibernate-configuration>

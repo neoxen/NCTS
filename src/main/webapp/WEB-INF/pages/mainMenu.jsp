@@ -17,4 +17,10 @@
     <li>
         <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
     </li>
+    <li>
+        <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
+    </li>
+    <li>
+        <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
+    </li>
 </ul>
