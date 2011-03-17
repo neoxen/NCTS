@@ -39,5 +39,15 @@
 
     
 
+    <!--NctsUserManager-START-->
+    <bean id="nctsUserManager" class="com.ncts.service.impl.GenericManagerImpl">
+        <constructor-arg>
+            <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <constructor-arg value="com.ncts.model.NctsUser"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <!--NctsUserManager-END-->
+
     <!-- Add new Managers here -->
 </beans>

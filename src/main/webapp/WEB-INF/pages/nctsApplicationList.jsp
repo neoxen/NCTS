@@ -18,6 +18,9 @@
 <c:out value="${buttons}" escapeXml="false" />
 
 <display:table name="nctsApplications" class="table" requestURI="" id="nctsApplicationList" export="false" pagesize="25">
+    <display:column property="applyId" sortable="true" href="editNctsApplication.html" media="html"
+        paramId="applyId" paramProperty="applyId" titleKey="nctsApplication.applyId"/>
+
     <display:column property="siteAddress" sortable="true" titleKey="nctsApplication.siteAddress" maxLength="10"/>
     <display:column property="siteName" sortable="true" titleKey="nctsApplication.siteName" maxLength="10"/>
 

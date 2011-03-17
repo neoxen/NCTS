@@ -6,17 +6,17 @@
     <c:if test="${empty pageContext.request.remoteUser}"><li><a href="<c:url value="/login.jsp"/>" class="current"><fmt:message key="login.title"/></a></li></c:if>
     <menu:displayMenu name="MainMenu"/>
     <menu:displayMenu name="UserMenu"/>
-     <!--NctsApplication-START-->
-    <menu:displayMenu name="NctsApplicationMenu"/>
-    <!--NctsApplication-END-->
-    <!--NctsElecidentify-START-->
-    <menu:displayMenu name="NctsElecidentifyMenu"/>
-    <!--NctsElecidentify-END-->
-    <menu:displayMenu name="AdminMenu"/>
+    <menu:displayMenu name="CreateApplication"/>
+    <menu:displayMenu name="ApplicationList"/>
+    <menu:displayMenu name="ElecidentifyList"/>
+    <menu:displayMenu name="ViewUsers"/>
+    <menu:displayMenu name="AdminApplicationList"/>
+    <menu:displayMenu name="AdminElecidentifyList"/>
+    <menu:displayMenu name="ActiveUsers"/>
     <menu:displayMenu name="Logout"/>
 
-
-
-    
+    <!--NctsUser-START-->
+    <!--menu displayMenu name="NctsUserMenu" /-->
+    <!--NctsUser-END-->
 </ul>
 </menu:useMenuDisplayer>

@@ -244,7 +244,62 @@
     </table>
     <!--NctsElecidentify-END-->
     
+    <!--NctsUser-START-->
+    <table name="ncts_user">
+        <column>userId</column>
+        <column>IsOpened</column>
+        <column>IsRepeat</column>
+        <column>IsSCan</column>
+        <column>IsValid</column>
+        <column>Password</column>
+        <column>SFZRXM</column>
+        <column>SNBXH</column>
+        <column>SQYMC</column>
+        <column>SZCH</column>
+        <column>UserName</column>
+    <row>
+        <value description="userId">-1</value>
+        <value description="IsOpened">0</value>
+        <value description="IsRepeat">0</value>
+        <value description="IsSCan">0</value>
+        <value description="IsValid">0</value>
+        <value description="Password">UcWeMpInWiUqSoHeByHcXvRlDbFsZpYh</value>
+        <value description="SFZRXM">DmJfSkYbLbCoBrDxDqKrIsYpMqYjVkDvErDrUbNzEeAzYfImDrUfAoChLwGmJvOjUzHkTeLoSgMiMiZlXzLzBcJwKwWtImGtBpDqKhTrUpYaMaFzOqOzJeWrUyIpUyThMjNmXbJpGgJhGsRtKcUmGdYuLtRfGqXnKcGvIhZsTjByCbMnUkRaCuGyGsTjDsPlXzSiWoXoHoZnUxFqWuTmVlOrHoQrMaClMgAwVsPkQrLtJoDeQmMtXfQaJiFhVsJhKbCxGdWrBvRaDjXvHqQfDrFbEhCmKuXoFuEoTnWuKqYlBmIqVxWvMtOvHlWrNaPvIkOkFyTjHrYxGvJgVtQiHpAwPeItHbWzAbPcHuNpRgClUlNlNiEmJcViUaIoNzEqPeVpVqUqRlOwUzLmGoYbWmJzOtOrWrTcZoNjMnEsLeDsPkPjXkFoCbLzKzTiJaKhGtIcVgVdNyPgMfMuSoWpKhXhIlBtYxUbSvJhOjCnJkFcImUpPyKd</value>
+        <value description="SNBXH">YgPzFdTrKmXsAiIqYuOpDjKnToDnCd</value>
+        <value description="SQYMC">PiWcLbXjDbTeOuQiYzQlJzQcCqHtSaHlRlLaVmFzPdIgRgRyUhPgNePuQjCjMlNkNbEdFfLfFqRdCmRaHdHfWbFjPwRaLnIxNmXc</value>
+        <value description="SZCH">ZzZiEgMrGdWbSzGcYmYiIeWcCyAwClVlSqAyVoRa</value>
+        <value description="UserName">VsRiXhWaIaMcGaFoMhAu</value>
+    </row>
+    <row>
+        <value description="userId">-2</value>
+        <value description="IsOpened">0</value>
+        <value description="IsRepeat">0</value>
+        <value description="IsSCan">0</value>
+        <value description="IsValid">0</value>
+        <value description="Password">DbXnHnBeWvUhPtJkWkFkBdBoWcNaZhYf</value>
+        <value description="SFZRXM">ZbJpUjXoRmUwTxAuSbIeKoVsOhQxXdLpJeVfGaQnXjWqFtTvYrUhWwXpDnKeTbQfYxZrUzGxOsTxKkCyYlKlNhBuZiEuGoTrRiLaXmZbAbXzDpVzQhEyIxFrJgCaKgUjYmXyItPoOoMpUyWaKeNaDwYfXeDqSjUeJsKhRjAbVlZdXoKdNrVhKdCzJwAiTpBtHhAnQdIkZsQiPuLtKwBiRhYmTxNpZsTqJnTrLvUbRiRgSgMzIhXuZpInLvZtZyRvKwMjJuJpLiBgAdLgRjXoOiKyXoIdLjLuMjMbQzDrPiNoMtZjTyZgYlCtKzSvBlTeEiBwQcNeUlMxBhUpObDvEnKgYuHbCdAlHhEeFfBmNbRgQxJeMdMqHpLnRsIqPxCgRiVwGgCbGhUeFzZvCeLpBtChJvJaQeMgGiHmQkHoGjJcKrYxMiGrBrUsGfYsWzOfLtQcKsNpKlXaWsVmTxRqUkIxZxEkMyFiRpVxBhZnLqKjRkMtSeZw</value>
+        <value description="SNBXH">InLeWwCqAmPsJpQiDjQoGfZeByUrUx</value>
+        <value description="SQYMC">HuAoCvOoQhVzJgUqAoFtYdReTmDyWbJuWeLkHgUlLyTsVqSmUxYtOsFxCaOjRqCjBvRkEdFwLwRsPsTsNsMzNgKiAaIgMkVcDrUh</value>
+        <value description="SZCH">DwBiEwTtNzIxMoCpVuDaWkBiCnHnOzTnNkGsQpTb</value>
+        <value description="UserName">OjScFkAwVkEvCfLiVcRc</value>
+    </row>
+    <row>
+        <value description="userId">-3</value>
+        <value description="IsOpened">0</value>
+        <value description="IsRepeat">0</value>
+        <value description="IsSCan">0</value>
+        <value description="IsValid">0</value>
+        <value description="Password">LqCcGeMaLdLqFlLmZhOvHeJqTgZxBkTs</value>
+        <value description="SFZRXM">MaObYhDdBsRnFnViRfPgLsMfOxSsYgUcPyFzCeOdFtDsEjWfYcAyKrWrUmRlJtOvMvObPgRmZeYrSyGmPfUeWqWwEjDsBgJcXeGuOvQwMuZyXnWvBsXjXiZeAvJoGlSlNhOuJmAxOhYeRvGlLoZeDuXmQxQrCwWxVgSaUoXhYbEcTtLaNmOqEeVmAmGpXlYfLbRzQrPjKrBfTfDgAjIrGoIeWuDgDsCoMeHkMdImNdSeKyBrLzAtAbAqOyMwZpYeLgJcRsHdDxPwHcKjTnWaUeYaTzOtAgIpDyEaPmWyWvSmLqXjPzHkXlVsYvCxElHxUjJrElHbVkWdQdSxOiObJgUbMxRiXoFhSgVpRlIvWgFeSxVhWdFgTbGxRqIvRxKwByYmTpIrQbElZfUwDlEeGqCtEiMgQyUwNeFwQoMfHkJhFbKyQuOgHuZyWlInSfVtYkUyQlMrHeAxOpUoOpMqWeFeLyZjNyRyNeRtBtDlGbKdEnWaPtDx</value>
+        <value description="SNBXH">RmKjYwKzDoXpRxYjBpMbOfVjLhYwVj</value>
+        <value description="SQYMC">GbFqWlWiGdPwYsZsCsYhAhQlOqApJaZaQpAqTuCqZnYyFiMxBeTwKnXkGbWgVkLxEiOgAsOqMcKwFgBcWzAkAjTdJnPeRiHqVuXg</value>
+        <value description="SZCH">AeRnPeUzFtGeGgQzCqYvCoYuJvVwChYrYuPmDcIl</value>
+        <value description="UserName">StFeXxKfZiYvKpUoNnVn</value>
+    </row>
+    </table>
+    <!--NctsUser-END-->
 </dataset>
+
 
 
 

@@ -12,9 +12,6 @@
 
 <ul class="glassList">
     <li>
-        <a href="<c:url value='/editProfile.html'/>"><fmt:message key="menu.user"/></a>
-    </li>
-    <li>
         <a href="<c:url value='/editNctsApplication.html'/>"><fmt:message key="menu.user.nctsApplication"/></a>
     </li>
     <li>

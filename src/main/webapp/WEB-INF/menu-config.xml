@@ -5,22 +5,24 @@
     </Displayers>
     <Menus>
         <Menu name="MainMenu" title="mainMenu.title" page="/mainMenu.html" roles="ROLE_ADMIN,ROLE_USER"/>
-        <Menu name="UserMenu" title="menu.user" description="User Menu" page="/editProfile.html" roles="ROLE_ADMIN,ROLE_USER"/>
-        <!--NctsApplication-START-->
-        <Menu name="NctsApplicationMenu" title="nctsApplicationList.title" page="/nctsApplications.html" roles="ROLE_ADMIN,ROLE_USER"/>
-        <!--NctsApplication-END-->
-        <!--NctsElecidentify-START-->
-        <Menu name="NctsElecidentifyMenu" title="nctsElecidentifyList.title" page="/nctsElecidentifies.html" roles="ROLE_ADMIN,ROLE_USER"/>
-        <!--NctsElecidentify-END-->
-        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="120" page="/admin/users.html">
-            <Item name="ViewUsers" title="menu.admin.users" page="/admin/users.html"/>
-            <Item name="ActiveUsers" title="mainMenu.activeUsers" page="/admin/activeUsers.html"/>
-            <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload.html"/>
-        </Menu>
+        <Menu name="UserMenu" title="menu.user" page="/editProfile.html" roles="ROLE_USER"/>
+        <Menu name="CreateApplication" title="menu.user.nctsApplication" page="/editNctsApplication.html" roles="ROLE_USER"/>
+
+        <Menu name="ApplicationList" title="menu.user.nctsApplicationList" page="/nctsApplications.html" roles="ROLE_USER"/>
+        <Menu name="ElecidentifyList" title="menu.user.nctsElecidentifyList" page="/nctsElecidentifies.html" roles="ROLE_USER"/>
+
+        <Menu name="AdminApplicationList" title="menu.admin.nctsApplications" page="/nctsApplications.html" roles="ROLE_ADMIN"/>
+        <Menu name="AdminElecidentifyList" title="menu.admin.nctsElecidentifyList" page="/nctsElecidentifies.html" roles="ROLE_ADMIN"/>
+
+        <Menu name="ViewUsers" title="menu.admin.users" page="/admin/users.html" roles="ROLE_ADMIN"/>
+        <Menu name="ActiveUsers" title="mainMenu.activeUsers" page="/admin/activeUsers.html" roles="ROLE_ADMIN"/>
+        <!--Menu name="ReloadContext" title="menu.admin.reload" page="/admin/reload.html"/-->
+
         <Menu name="Logout" title="user.logout" page="/logout.jsp" roles="ROLE_ADMIN,ROLE_USER"/>
 
 
-
-        
+        <!--NctsUser-START-->
+        <!-- Menu name="NctsUserMenu" title="nctsUserList.title" page="/nctsUsers.html"/-->
+        <!--NctsUser-END-->
     </Menus>
 </MenuConfig>

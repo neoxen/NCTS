@@ -149,6 +149,24 @@
 
         
 
+        <!--NctsUserAction-START-->
+        <action name="nctsUsers" class="com.ncts.webapp.action.NctsUserAction" method="list">
+            <result>/WEB-INF/pages/nctsUserList.jsp</result>
+        </action>
+
+        <action name="editNctsUser" class="com.ncts.webapp.action.NctsUserAction" method="edit">
+            <result>/WEB-INF/pages/nctsUserForm.jsp</result>
+            <result name="error">/WEB-INF/pages/nctsUserList.jsp</result>
+        </action>
+
+        <action name="saveNctsUser" class="com.ncts.webapp.action.NctsUserAction" method="save">
+            <result name="input">/WEB-INF/pages/nctsUserForm.jsp</result>
+            <result name="cancel" type="redirectAction">nctsUsers</result>
+            <result name="delete" type="redirectAction">nctsUsers</result>
+            <result name="success" type="redirectAction">nctsUsers</result>
+        </action>
+        <!--NctsUserAction-END-->
+
         <!-- Add additional actions here -->
     </package>
 

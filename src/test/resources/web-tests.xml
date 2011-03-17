@@ -9,7 +9,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload,NctsElecidentifyTests,NctsApplicationTests"
+        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload,NctsUserTests,NctsElecidentifyTests,NctsApplicationTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -435,4 +435,111 @@
     </target>
     <!--NctsElecidentify-END-->
     
+    <!--NctsUser-START-->
+    <!-- runs nctsUser-related tests -->
+    <target name="NctsUserTests" depends="SearchNctsUsers,EditNctsUser,SaveNctsUser,AddNctsUser,DeleteNctsUser"
+            description="Call and executes all nctsUser test cases (targets)">
+        <echo>Successfully ran all NctsUser UI tests!</echo>
+    </target>
+
+    <!-- Verify the nctsUsers list screen displays without errors -->
+    <target name="SearchNctsUsers" description="Tests search for and displaying all nctsUsers">
+        <webtest name="searchNctsUsers">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View NctsUser link" url="/nctsUsers.html"/>
+                <verifytitle description="we should see the nctsUserList title"
+                             text=".*${nctsUserList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit nctsUser screen displays without errors -->
+    <target name="EditNctsUser" description="Tests editing an existing NctsUser's information">
+        <webtest name="editNctsUser">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsUser link" url="/editNctsUser.html?userId=-1"/>
+                <verifytitle description="we should see the nctsUserDetail title"
+                             text=".*${nctsUserDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a nctsUser and then save -->
+    <target name="SaveNctsUser" description="Tests editing and saving a nctsUser">
+        <webtest name="saveNctsUser">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsUser link" url="/editNctsUser.html?userId=-1"/>
+                <verifytitle description="we should see the nctsUserDetail title"
+                             text=".*${nctsUserDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+                <setCheckbox description="set isOpened" name="nctsUser.isOpened" value="true"/>
+                <setCheckbox description="set isRepeat" name="nctsUser.isRepeat" value="true"/>
+                <setCheckbox description="set isScan" name="nctsUser.isScan" value="true"/>
+                <setCheckbox description="set isValid" name="nctsUser.isValid" value="true"/>
+                <setInputField description="set password" name="nctsUser.password" value="UzSpNnEkTbAaChAhDxVmPbBtHgHwLfLe"/>
+                <setInputField description="set sfzrxm" name="nctsUser.sfzrxm" value="RxLxLmIgKzNjAoWgSpBgPvXdVrWqKaKwLwXwXiOrIlXmDzQxJvVhStWfEtHeTcEfFzMiSdRuYhNmLiGmLmYjXrNnFnUzRrXrZlVpRwFzWdIvNaAtGfAxTqHxZbQcVmNeZyPaJxYeMuIzEnAwBxOwLfRzMvTdJzPmBfSxNoHiBuHlFbJkYfJtHiXsZlNfNiRyKoZuKuBaXjWwMlMpKoZxFcVcGsEnBfKeKhMrPjIqYlVsCePvOiTcQbXnIuXtKjNlXtXzUfUhKcOzCyOqIdOgMpRwEtRcNuNzQuJhIzIoYyVbBcXgFsLqSsLgBcCgQsBoXxDoIsNaRgUcFrDmUqDaSyWtSbNyQmDmNxGoScTgXxHmUlHsBpSjGmKmDoJkExYrYjNpWuMcTtKnLiScRuWoOrJcItZhPrUfVgOjEvRbEiDnCcCcKmEkPuUfMxHuRgDuPmMfFoObElKyYcVkBcPcWuCgJcCbVtErMfKmRsOkMqLyTmNuOiMq"/>
+                <setInputField description="set sqymc" name="nctsUser.sqymc" value="ZtHqZtLtOgHyPyOhEtQzAfFdJpTkDkMsXcJcIvCwAhHuMfKkRiRpEbFoOrEkBaXrHmUcQuUzBpIhTeBjSeGzVlLwYoVqGyJxDnNz"/>
+                <setInputField description="set szch" name="nctsUser.szch" value="QlYpFhKbBxBcGgRmBaTyJzPsPmQkKfZrJeJpGuAs"/>
+                <setInputField description="set userName" name="nctsUser.userName" value="EmHhSyBiThHoLvDfYrOn"/>
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                             text=".*${nctsUserDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsUser.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new NctsUser -->
+    <target name="AddNctsUser" description="Adds a new NctsUser">
+        <webtest name="addNctsUser">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/editNctsUser.html"/>
+                <verifytitle description="we should see the nctsUserDetail title"
+                             text=".*${nctsUserDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+                <setCheckbox description="set isOpened" name="nctsUser.isOpened" value="true"/>
+                <setCheckbox description="set isRepeat" name="nctsUser.isRepeat" value="true"/>
+                <setCheckbox description="set isScan" name="nctsUser.isScan" value="true"/>
+                <setCheckbox description="set isValid" name="nctsUser.isValid" value="true"/>
+                <setInputField description="set password" name="nctsUser.password" value="KhLkVmVjUpEzOpHrBqAgPdIiGxUiAcNa"/>
+                <setInputField description="set sfzrxm" name="nctsUser.sfzrxm" value="YvTzGrTqCbMqBjMaJrHaMuFcJtZmYrBlAjAxMwSdMeNdQkBmLgSlUtQhHsSnLxOqNxWcNcOzLzQxXxXlWxMpJiFtUlKvFhKnNnRrKzArMeWsFnVlHyQjIdFpWlXyIxHeObJfLiXeAoYjNwVfSiVzKxQrNbUjClXeCwApMfXeLlXnJsCfJtFeNsGxKlYnHhObNiFjOzEaOoRwYdSjOzVeHgNaBcHyEzMfFyGsVbYeJtZoRhZvZiWlJlWpTlYbJvXzWiUkPjIpVtPxQxWhGrRcLiFkQsKsKxWuAaThTmQdZbSaXpRjJfOdSbTqWzFhYcZvArIqMwOyNhOjJzZiZdAkYkXxHvPzBqLwAnOkXfYnIrLwJhZyLyIgBhSdBqQiUrJhMbQrLhRsLwWoHdStHkGdToCtWrQzXhNiLcAuCwUgDvXrQnZjZoXqSfBjAeJsBoYsVtLdAaWeMdXqBgDiYbDrPsEfBvHsCbCnBbFrNmRuTpMnWgJxQtAv"/>
+                <setInputField description="set sqymc" name="nctsUser.sqymc" value="VnKkReFcLlHaTrZlClBvQwQqTrFiEnKiBcZdMsVrGkEeErMmUoBsCnCpPpCdXgEsLvXaMxEaCvNeCwRtWdKgBhEfXoMbOgFhPmGz"/>
+                <setInputField description="set szch" name="nctsUser.szch" value="NrMqNhKdXhAqSoAnUpNdYaYsGwCkLvBhEwDqPoOg"/>
+                <setInputField description="set userName" name="nctsUser.userName" value="XrInYeZyBiIjQbOyDeSi"/>
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="NctsUser List appears if save successful"
+                             text=".*${nctsUserList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsUser.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing nctsUser -->
+    <target name="DeleteNctsUser" description="Deletes existing NctsUser">
+        <webtest name="deleteNctsUser">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsUser link" url="/editNctsUser.html?userId=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display NctsUser List" text=".*${nctsUserList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsUser.deleted}"/>
+            </steps>
+        </webtest>
+    </target>
+    <!--NctsUser-END-->
 </project>

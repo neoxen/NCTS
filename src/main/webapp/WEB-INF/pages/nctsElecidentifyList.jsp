@@ -6,14 +6,14 @@
     <meta name="menu" content="NctsElecidentifyMenu"/>
 </head>
 
-<c:set var="buttons">
+<!--c:set var="buttons">
     <input type="button" style="margin-right: 5px" class="button"
-        onclick="location.href='<c:url value="/editNctsElecidentify.html"/>'"
-        value="<fmt:message key="button.add"/>"/>
+        onclick="location.href='<c url value="/editNctsElecidentify.html"/>'"
+        value="<fmt message key="button.add"/>"/>
 
-    <input type="button" class="button" onclick="location.href='<c:url value="/mainMenu.html"/>'"
-        value="<fmt:message key="button.done"/>"/>
-</c:set>
+    <input type="button" class="button" onclick="location.href='<c url value="/mainMenu.html"/>'"
+        value="<fmt message key="button.done"/>"/>
+</c set-->
 
 <c:out value="${buttons}" escapeXml="false" />
 
@@ -36,7 +36,7 @@
 
 </display:table>
 
-<c:out value="${buttons}" escapeXml="false" />
+<!-- c out value="USD {buttons}" escapeXml="false" /-->
 
 <script type="text/javascript">
     highlightTableRows("nctsElecidentifyList");

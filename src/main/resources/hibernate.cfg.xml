@@ -9,5 +9,6 @@
         <mapping class="com.ncts.model.NctsApplication"/>
         <mapping class="com.ncts.model.NctsElecidentify"/>
     
+        <mapping class="com.ncts.model.NctsUser"/>
     </session-factory>
 </hibernate-configuration>
