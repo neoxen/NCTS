@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ncts.model.NctsUser;
+import com.ncts.service.GenericManager;
 import org.apache.struts2.ServletActionContext;
 import com.ncts.Constants;
 import com.ncts.model.User;
@@ -22,6 +24,21 @@ public class SignupAction extends BaseAction {
     private static final long serialVersionUID = 6558317334878272308L;
     private User user;
     private String cancel;
+
+    private GenericManager<NctsUser, String> nctsUserManager;
+    private NctsUser nctsUser;
+
+    public NctsUser getNctsUser() {
+        return nctsUser;
+    }
+
+    public void setNctsUser(NctsUser nctsUser) {
+        this.nctsUser = nctsUser;
+    }
+
+    public void setNctsUserManager(GenericManager<NctsUser, String> nctsUserManager) {
+        this.nctsUserManager = nctsUserManager;
+    }
 
     public void setCancel(String cancel) {
         this.cancel = cancel;
@@ -90,6 +107,22 @@ public class SignupAction extends BaseAction {
             user.setPassword(user.getConfirmPassword());
             return INPUT;
         }
+
+        nctsUser = new NctsUser();
+        nctsUser.setUserName(user.getUsername());
+        nctsUser.setPassword(user.getPassword());
+        nctsUser.setSfzrxm(user.getFirstName());
+        nctsUser.setSqymc(user.getWebsite());
+        nctsUser.setSzch(user.getLastName());
+
+        try{
+            nctsUser = nctsUserManager.save(nctsUser);
+        } catch (AccessDeniedException ade) {
+            log.warn(ade.getMessage());
+            getResponse().sendError(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
+
 
         saveMessage(getText("user.registered"));
         getSession().setAttribute(Constants.REGISTERED, Boolean.TRUE);

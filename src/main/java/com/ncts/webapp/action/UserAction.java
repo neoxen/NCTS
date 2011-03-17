@@ -1,5 +1,7 @@
 package com.ncts.webapp.action;
 
+import com.ncts.model.NctsUser;
+import com.ncts.service.GenericManager;
 import com.opensymphony.xwork2.Preparable;
 import org.apache.struts2.ServletActionContext;
 import com.ncts.Constants;
@@ -29,6 +31,21 @@ public class UserAction extends BaseAction implements Preparable {
     private List users;
     private User user;
     private String id;
+
+    private GenericManager<NctsUser, String> nctsUserManager;
+    private NctsUser nctsUser;
+
+    public NctsUser getNctsUser() {
+        return nctsUser;
+    }
+
+    public void setNctsUser(NctsUser nctsUser) {
+        this.nctsUser = nctsUser;
+    }
+
+    public void setNctsUserManager(GenericManager<NctsUser, String> nctsUserManager) {
+        this.nctsUserManager = nctsUserManager;
+    }
 
     /**
      * Grab the entity from the database before populating with request parameters
@@ -67,7 +84,9 @@ public class UserAction extends BaseAction implements Preparable {
      * @return success
      */
     public String delete() {
+        String strUsername = user.getUsername();
         userManager.removeUser(user.getId().toString());
+        //TODO: delete nctsUser entry
         List<Object> args = new ArrayList<Object>();
         args.add(user.getWebsite());
         saveMessage(getText("user.deleted", args));

@@ -1,21 +1,19 @@
 package com.ncts.model;
 
-import com.ncts.model.BaseObject;
 import org.compass.annotations.SearchableId;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name="ncts_user",catalog="NCTS")
+@NamedQueries({
+        @NamedQuery(
+                name = "findNctsUserByUserName",
+                query = "select n from NctsUser n where n.userName = :name "
+        )
+})
 public class NctsUser extends BaseObject implements Serializable {
     private String userId;
     private String userName;
@@ -66,7 +64,7 @@ public class NctsUser extends BaseObject implements Serializable {
         this.userName = userName;
     }
     
-    @Column(name="Password", nullable=false, length=32)
+    @Column(name="Password", nullable=false, length=255)
     public String getPassword() {
         return this.password;
     }

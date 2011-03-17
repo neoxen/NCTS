@@ -8,6 +8,7 @@
     </bean>
     
     <bean id="signupAction" class="com.ncts.webapp.action.SignupAction" scope="prototype">
+        <property name="nctsUserManager" ref="nctsUserManager"/>
         <property name="userManager" ref="userManager"/>
         <property name="roleManager" ref="roleManager"/>
         <property name="mailEngine" ref="mailEngine"/>
@@ -16,6 +17,7 @@
     </bean>
     
     <bean id="userAction" class="com.ncts.webapp.action.UserAction" scope="prototype">
+        <property name="nctsUserManager" ref="nctsUserManager"/>
         <property name="userManager" ref="userManager"/>
         <property name="roleManager" ref="roleManager"/>
         <property name="mailEngine" ref="mailEngine"/>

@@ -43,6 +43,7 @@
     <bean id="nctsUserManager" class="com.ncts.service.impl.GenericManagerImpl">
         <constructor-arg>
             <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <property name="sessionFactory" ref="sessionFactory" />
                 <constructor-arg value="com.ncts.model.NctsUser"/>
             </bean>
         </constructor-arg>
