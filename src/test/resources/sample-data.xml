@@ -197,5 +197,54 @@
     </row>
     </table>
     <!--NctsApplication-END-->
+    <!--NctsElecidentify-START-->
+    <table name="ncts_elecidentify">
+        <column>identifyId</column>
+        <column>ApplyID</column>
+        <column>CreateDate</column>
+        <column>DestroyDate</column>
+        <column>IdentifyCode</column>
+        <column>IsValid</column>
+        <column>SiteDomains</column>
+        <column>SNBXH</column>
+        <column>Version</column>
+    <row>
+        <value description="identifyId">-1</value>
+        <value description="ApplyID">blablabla</value>
+        <value description="CreateDate">2011-03-17</value>
+        <value description="DestroyDate">2011-03-17</value>
+        <value description="IdentifyCode">blablabla</value>
+        <value description="IsValid">1150185736</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SNBXH">blablabla</value>
+        <value description="Version">1</value>
+    </row>
+    <row>
+        <value description="identifyId">-2</value>
+        <value description="ApplyID">blablabla</value>
+        <value description="CreateDate">2011-03-17</value>
+        <value description="DestroyDate">2011-03-17</value>
+        <value description="IdentifyCode">blablabla</value>
+        <value description="IsValid">1946168604</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SNBXH">blablabla</value>
+        <value description="Version">1</value>
+    </row>
+    <row>
+        <value description="identifyId">-3</value>
+        <value description="ApplyID">blablabla</value>
+        <value description="CreateDate">2011-03-17</value>
+        <value description="DestroyDate">2011-03-17</value>
+        <value description="IdentifyCode">blablabla</value>
+        <value description="IsValid">828914338</value>
+        <value description="SiteDomains">blablabla</value>
+        <value description="SNBXH">blablabla</value>
+        <value description="Version">1</value>
+    </row>
+    </table>
+    <!--NctsElecidentify-END-->
+    
 </dataset>
+
+
 

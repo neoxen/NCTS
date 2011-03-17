@@ -7,5 +7,7 @@
         <mapping class="com.ncts.model.Role"/>
     
         <mapping class="com.ncts.model.NctsApplication"/>
+        <mapping class="com.ncts.model.NctsElecidentify"/>
+    
     </session-factory>
 </hibernate-configuration>

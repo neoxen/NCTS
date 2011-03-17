@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/common/taglibs.jsp" %>
 
 <head>
     <title><fmt:message key="mainMenu.title"/></title>
@@ -15,12 +15,12 @@
         <a href="<c:url value='/editProfile.html'/>"><fmt:message key="menu.user"/></a>
     </li>
     <li>
-        <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
+        <a href="<c:url value='/editNctsApplication.html'/>"><fmt:message key="menu.user.nctsApplication"/></a>
     </li>
     <li>
-        <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
+        <a href="<c:url value='/nctsApplications.html'/>"><fmt:message key="menu.user.nctsApplicationList"/></a>
     </li>
     <li>
-        <a href="<c:url value='/uploadFile.html'/>"><fmt:message key="menu.selectFile"/></a>
+        <a href="<c:url value='/nctsElecidentifies.html'/>"><fmt:message key="menu.user.nctsElecidentifyList"/></a>
     </li>
 </ul>

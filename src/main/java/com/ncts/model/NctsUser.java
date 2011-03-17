@@ -1,6 +1,8 @@
 package com.ncts.model;
 
 import com.ncts.model.BaseObject;
+import org.compass.annotations.SearchableId;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,12 +24,31 @@ public class NctsUser extends BaseObject implements Serializable {
     private String sqymc;
     private String sfzrxm;
     private String snbxh;
-    private char isOpened;
-    private char isRepeat;
-    private char isScan;
-    private char isValid;
+    private boolean isOpened;
+    private boolean isRepeat;
+    private boolean isScan;
+    private boolean isValid;
 
-    @Id  @GeneratedValue(strategy = GenerationType.AUTO)    
+    public NctsUser() {
+        this.isOpened = false;
+        this.isRepeat = false;
+        this.isScan = false;
+        this.isValid = false;
+    }
+
+    public NctsUser(String userName) {
+        this.userName = userName;
+        this.isOpened = false;
+        this.isRepeat = false;
+        this.isScan = false;
+        this.isValid = false;
+    }
+
+    @Id
+    @Column(length = 32)
+    @SearchableId
+    @GeneratedValue(generator = "userIdGenerator")
+    @GenericGenerator(name = "userIdGenerator", strategy = "uuid")
     public String getUserId() {
         return this.userId;
     }
@@ -90,39 +111,39 @@ public class NctsUser extends BaseObject implements Serializable {
         this.snbxh = snbxh;
     }
     
-    @Column(name="IsOpened", nullable=false, length=1)
-    public char getIsOpened() {
+    @Column(name="IsOpened", nullable=false)
+    public boolean getIsOpened() {
         return this.isOpened;
     }
     
-    public void setIsOpened(char isOpened) {
+    public void setIsOpened(boolean isOpened) {
         this.isOpened = isOpened;
     }
     
-    @Column(name="IsRepeat", nullable=false, length=1)
-    public char getIsRepeat() {
+    @Column(name="IsRepeat", nullable=false)
+    public boolean getIsRepeat() {
         return this.isRepeat;
     }
     
-    public void setIsRepeat(char isRepeat) {
+    public void setIsRepeat(boolean isRepeat) {
         this.isRepeat = isRepeat;
     }
     
-    @Column(name="IsSCan", nullable=false, length=1)
-    public char getIsScan() {
+    @Column(name="IsSCan", nullable=false)
+    public boolean getIsScan() {
         return this.isScan;
     }
     
-    public void setIsScan(char isScan) {
+    public void setIsScan(boolean isScan) {
         this.isScan = isScan;
     }
     
-    @Column(name="IsValid", nullable=false, length=1)
-    public char getIsValid() {
+    @Column(name="IsValid", nullable=false)
+    public boolean getIsValid() {
         return this.isValid;
     }
     
-    public void setIsValid(char isValid) {
+    public void setIsValid(boolean isValid) {
         this.isValid = isValid;
     }
 

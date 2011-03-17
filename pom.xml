@@ -6,7 +6,7 @@
     <artifactId>NCTS</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>Net Trading Supervision</name>
+    <name>Network Commodities Trading Supervision</name>
     <url>http://www.whhd.gov.cn</url>
 
     <prerequisites>

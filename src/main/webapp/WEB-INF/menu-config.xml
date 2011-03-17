@@ -9,6 +9,9 @@
         <!--NctsApplication-START-->
         <Menu name="NctsApplicationMenu" title="nctsApplicationList.title" page="/nctsApplications.html" roles="ROLE_ADMIN,ROLE_USER"/>
         <!--NctsApplication-END-->
+        <!--NctsElecidentify-START-->
+        <Menu name="NctsElecidentifyMenu" title="nctsElecidentifyList.title" page="/nctsElecidentifies.html" roles="ROLE_ADMIN,ROLE_USER"/>
+        <!--NctsElecidentify-END-->
         <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="120" page="/admin/users.html">
             <Item name="ViewUsers" title="menu.admin.users" page="/admin/users.html"/>
             <Item name="ActiveUsers" title="mainMenu.activeUsers" page="/admin/activeUsers.html"/>
@@ -17,5 +20,7 @@
         <Menu name="Logout" title="user.logout" page="/logout.jsp" roles="ROLE_ADMIN,ROLE_USER"/>
 
 
+
+        
     </Menus>
 </MenuConfig>

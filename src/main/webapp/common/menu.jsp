@@ -9,9 +9,14 @@
      <!--NctsApplication-START-->
     <menu:displayMenu name="NctsApplicationMenu"/>
     <!--NctsApplication-END-->
+    <!--NctsElecidentify-START-->
+    <menu:displayMenu name="NctsElecidentifyMenu"/>
+    <!--NctsElecidentify-END-->
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
 
 
+
+    
 </ul>
 </menu:useMenuDisplayer>

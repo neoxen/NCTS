@@ -19,11 +19,25 @@
     <bean id="nctsApplicationManager" class="com.ncts.service.impl.GenericManagerImpl">
         <constructor-arg>
             <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <property name="sessionFactory" ref="sessionFactory" />
                 <constructor-arg value="com.ncts.model.NctsApplication"/>
             </bean>
         </constructor-arg>
     </bean>
     <!--NctsApplicationManager-END-->
+
+    <!--NctsElecidentifyManager-START-->
+    <bean id="nctsElecidentifyManager" class="com.ncts.service.impl.GenericManagerImpl">
+        <constructor-arg>
+            <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <property name="sessionFactory" ref="sessionFactory" />
+                <constructor-arg value="com.ncts.model.NctsElecidentify"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <!--NctsElecidentifyManager-END-->
+
+    
 
     <!-- Add new Managers here -->
 </beans>

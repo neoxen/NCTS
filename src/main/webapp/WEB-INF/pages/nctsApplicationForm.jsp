@@ -5,6 +5,9 @@
     <meta name="heading" content="<fmt:message key='nctsApplicationDetail.heading'/>"/>
 </head>
 
+<s:bean name="java.util.HashMap" id="qTableLayout" />
+
+
 <s:form id="nctsApplicationForm" action="saveNctsApplication" method="post" validate="true">
     <li style="display: none">
         <s:hidden key="nctsApplication.applyId"/>
@@ -57,7 +60,6 @@
                          cssClass="text medium"/>
             <s:textfield theme="qxhtml" key="nctsApplication.snbxh" required="true" maxlength="30"
                          cssClass="text medium"/>
-            <!-- s textfield theme="qxhtml" key="nctsApplication.userId" required="true" maxlength="32" cssClass="text medium"/ -->
         </table>
     </li>
     <li class="buttonBar bottom">

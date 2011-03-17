@@ -9,7 +9,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests" 
-        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload,NctsApplicationTests"
+        depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FileUpload,NctsElecidentifyTests,NctsApplicationTests"
         description="Call and executes all test cases (targets)"/>
     
     <!-- runs user-related tests -->
@@ -331,4 +331,108 @@
         </webtest>
     </target>
     <!--NctsApplication-END-->
+    <!--NctsElecidentify-START-->
+    <!-- runs nctsElecidentify-related tests -->
+    <target name="NctsElecidentifyTests" depends="SearchNctsElecidentifies,EditNctsElecidentify,SaveNctsElecidentify,AddNctsElecidentify,DeleteNctsElecidentify"
+            description="Call and executes all nctsElecidentify test cases (targets)">
+        <echo>Successfully ran all NctsElecidentify UI tests!</echo>
+    </target>
+
+    <!-- Verify the nctsElecidentifies list screen displays without errors -->
+    <target name="SearchNctsElecidentifies" description="Tests search for and displaying all nctsElecidentifies">
+        <webtest name="searchNctsElecidentifies">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View NctsElecidentify link" url="/nctsElecidentifies.html"/>
+                <verifytitle description="we should see the nctsElecidentifyList title"
+                             text=".*${nctsElecidentifyList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit nctsElecidentify screen displays without errors -->
+    <target name="EditNctsElecidentify" description="Tests editing an existing NctsElecidentify's information">
+        <webtest name="editNctsElecidentify">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsElecidentify link" url="/editNctsElecidentify.html?identifyId=-1"/>
+                <verifytitle description="we should see the nctsElecidentifyDetail title"
+                             text=".*${nctsElecidentifyDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a nctsElecidentify and then save -->
+    <target name="SaveNctsElecidentify" description="Tests editing and saving a nctsElecidentify">
+        <webtest name="saveNctsElecidentify">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsElecidentify link" url="/editNctsElecidentify.html?identifyId=-1"/>
+                <verifytitle description="we should see the nctsElecidentifyDetail title"
+                             text=".*${nctsElecidentifyDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+                <setInputField description="set applyId" name="nctsElecidentify.applyId" value="EmNzAsFdPdOaJyXdGcLbDvUmNrQwTgMv"/>
+                <setInputField description="set createDate" name="nctsElecidentify.createDate" value="03/17/2011"/>
+                <setInputField description="set identifyCode" name="nctsElecidentify.identifyCode" value="YeSuZhAiMfOnMvWsCmRrGsGsKeGdAoTkUkSiWeSmTmJwHeTkFr"/>
+                <setInputField description="set isValid" name="nctsElecidentify.isValid" value="1801005837"/>
+                <setInputField description="set siteDomains" name="nctsElecidentify.siteDomains" value="TmVsTbBfMpFjRlJgNcCbAbWyEmDdKuIcPhEoKkTdSvFiZfNdBoSoAtDpBcLbKyLpZdVdTiOmUoBwLkGzMeRvTaQsBwGmMjMzIiZcDaJsXjOlGjGhSoAoEwLlPxLuWhWtMmZsHyErZnJfEhYiRaToWqMrYkAvEuKfGiKrCuCdCsKhNaKyKbAeAtHjIvYcTiJpXiTcBvNu"/>
+                <setInputField description="set snbxh" name="nctsElecidentify.snbxh" value="PnYtYfAaBnWuYmSxQgWzLhLdXbDrIm"/>
+                <setInputField description="set version" name="nctsElecidentify.version" value="5018957714042457088"/>
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                             text=".*${nctsElecidentifyDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsElecidentify.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new NctsElecidentify -->
+    <target name="AddNctsElecidentify" description="Adds a new NctsElecidentify">
+        <webtest name="addNctsElecidentify">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/editNctsElecidentify.html"/>
+                <verifytitle description="we should see the nctsElecidentifyDetail title"
+                             text=".*${nctsElecidentifyDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+                <setInputField description="set applyId" name="nctsElecidentify.applyId" value="GbOlPyPfJnTaVnHbAbTsQlEhXdMlGaBr"/>
+                <setInputField description="set createDate" name="nctsElecidentify.createDate" value="03/17/2011"/>
+                <setInputField description="set identifyCode" name="nctsElecidentify.identifyCode" value="OuMaCeSjFaIgRfChSeNsUoTwMeSkJsVtVlQaDoSeHbMnDbCqOd"/>
+                <setInputField description="set isValid" name="nctsElecidentify.isValid" value="1588860778"/>
+                <setInputField description="set siteDomains" name="nctsElecidentify.siteDomains" value="NuKnQbUsIlAjCwVsVgAkBuRoVzCqKdHaUhIpNtWqTxSaBrGqBmAvZeWuAwVjBuVxWpFmGeNcOqXvNpPuSuXpKkHjBjIqMtXuSxSlZfEwCrOlByFoAmVzMkGqDhEgQfSyDcLzJgLuXhDpXaSyAbUxRrVrUjTlGbIxGnAoIfVxKfRlNbCpVfVjLiIbHdAvXiCxFjQpUlRt"/>
+                <setInputField description="set snbxh" name="nctsElecidentify.snbxh" value="XyBoFvGyXfRaFhDwIvIcKnWyFtMsAf"/>
+                <setInputField description="set version" name="nctsElecidentify.version" value="6672349658001996800"/>
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="NctsElecidentify List appears if save successful"
+                             text=".*${nctsElecidentifyList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsElecidentify.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing nctsElecidentify -->
+    <target name="DeleteNctsElecidentify" description="Deletes existing NctsElecidentify">
+        <webtest name="deleteNctsElecidentify">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit NctsElecidentify link" url="/editNctsElecidentify.html?identifyId=-1"/>
+                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifyNoDialogResponses/>
+                <verifytitle description="display NctsElecidentify List" text=".*${nctsElecidentifyList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${nctsElecidentify.deleted}"/>
+            </steps>
+        </webtest>
+    </target>
+    <!--NctsElecidentify-END-->
+    
 </project>

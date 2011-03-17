@@ -129,6 +129,26 @@
         </action>
         <!--NctsApplicationAction-END-->
 
+        <!--NctsElecidentifyAction-START-->
+        <action name="nctsElecidentifies" class="com.ncts.webapp.action.NctsElecidentifyAction" method="list">
+            <result>/WEB-INF/pages/nctsElecidentifyList.jsp</result>
+        </action>
+
+        <action name="editNctsElecidentify" class="com.ncts.webapp.action.NctsElecidentifyAction" method="edit">
+            <result>/WEB-INF/pages/nctsElecidentifyForm.jsp</result>
+            <result name="error">/WEB-INF/pages/nctsElecidentifyList.jsp</result>
+        </action>
+
+        <action name="saveNctsElecidentify" class="com.ncts.webapp.action.NctsElecidentifyAction" method="save">
+            <result name="input">/WEB-INF/pages/nctsElecidentifyForm.jsp</result>
+            <result name="cancel" type="redirectAction">nctsElecidentifies</result>
+            <result name="delete" type="redirectAction">nctsElecidentifies</result>
+            <result name="success" type="redirectAction">nctsElecidentifies</result>
+        </action>
+        <!--NctsElecidentifyAction-END-->
+
+        
+
         <!-- Add additional actions here -->
     </package>
 
