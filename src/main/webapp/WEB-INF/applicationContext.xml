@@ -50,5 +50,14 @@
     </bean>
     <!--NctsUserManager-END-->
 
+    <bean id="applicationManager" class="com.ncts.service.impl.ApplicationServiceImpl">
+        <constructor-arg name="applicationDao">
+            <bean class="com.ncts.dao.hibernate.GenericDaoHibernate">
+                <property name="sessionFactory" ref="sessionFactory" />
+                <constructor-arg value="com.ncts.model.NctsApplication"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
     <!-- Add new Managers here -->
 </beans>

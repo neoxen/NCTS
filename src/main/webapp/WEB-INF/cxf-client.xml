@@ -21,4 +21,13 @@
         <property name="serviceClass" value="com.ncts.client.UserService"/>
         <property name="address" value="http://localhost:8080/services/UserService"/>
      </bean>
+
+
+    <bean id="applicationClient" class="com.ncts.client.ApplicationService"
+       factory-bean="applicationClientFactory" factory-method="create"/>
+
+     <bean id="applicationClientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <property name="serviceClass" value="com.ncts.client.ApplicationService"/>
+        <property name="address" value="http://localhost:8080/services/ApplicationService"/>
+     </bean>
 </beans>

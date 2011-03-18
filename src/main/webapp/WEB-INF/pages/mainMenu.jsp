@@ -23,4 +23,7 @@
     <li>
         <a href="<c:url value='/userClient.html'/>"><fmt:message key="userList.heading"/></a>
     </li>
+    <li>
+        <a href="<c:url value='/applicationClient.html'/>"><fmt:message key="nctsApplicationList.heading"/></a>
+    </li>
 </ul>

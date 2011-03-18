@@ -40,5 +40,14 @@
         <property name="templateName" value="accountCreated.vm"/>
     </bean>
 
+    <bean id="applicationClientAction" class="com.ncts.webapp.action.ApplicationClientAction" scope="prototype">
+        <property name="applicationClient" ref="applicationClient"/>
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="templateName" value="accountCreated.vm"/>
+    </bean>
+
 
 </beans>
