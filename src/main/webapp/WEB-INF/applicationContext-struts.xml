@@ -30,4 +30,15 @@
         <property name="mailEngine" ref="mailEngine"/>
         <property name="mailMessage" ref="mailMessage"/>
     </bean>
+
+    <bean id="userClientAction" class="com.ncts.webapp.action.UserClientAction" scope="prototype">
+        <property name="userClient" ref="userClient"/>
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="templateName" value="accountCreated.vm"/>
+    </bean>
+
+
 </beans>

@@ -33,6 +33,7 @@
             classpath*:/applicationContext.xml
             /WEB-INF/applicationContext*.xml
             /WEB-INF/cxf-servlet.xml
+            /WEB-INF/cxf-client.xml
             /WEB-INF/security.xml
         </param-value>
     </context-param>

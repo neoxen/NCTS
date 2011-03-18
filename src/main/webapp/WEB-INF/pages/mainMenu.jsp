@@ -20,4 +20,7 @@
     <li>
         <a href="<c:url value='/nctsElecidentifies.html'/>"><fmt:message key="menu.user.nctsElecidentifyList"/></a>
     </li>
+    <li>
+        <a href="<c:url value='/userClient.html'/>"><fmt:message key="userList.heading"/></a>
+    </li>
 </ul>
