@@ -26,7 +26,7 @@ public class NctsElecidentifyActionTest extends BaseActionTestCase {
         nctsElecidentify.setIsValid(1560359998);
         nctsElecidentify.setSiteDomains("RjLkMjUaSzYvMtZcOdOvQfOqIoUeJrBnGnDrGwYtOtKzGyGiMcBmIyTyMtQtXlThBcAhTlJnGsSoKdRnUyOkMpEoOmQnBsOtOcGkFkUhOlZyLyIgLgTxEfAvMgTlMvKyLnCtMwIqFrQrVzLyWdTbMgWrZhQfXyHvMeBfVbOgWeVtKxMvIrFcSwDlJwGlVhCaLyQiIvPj");
         nctsElecidentify.setSnbxh("TrMaVsVkUwGlSpSzOwYnZqSwOzUiCm");
-        nctsElecidentify.setVersion(new Long("10864247826024747E9L"));
+        nctsElecidentify.setVersion(new Long("1"));
 
         nctsElecidentifyManager.save(nctsElecidentify);
     }
@@ -38,7 +38,7 @@ public class NctsElecidentifyActionTest extends BaseActionTestCase {
 
     public void testEdit() throws Exception {
         log.debug("testing edit...");
-        action.setIdentifyId("-1L");
+        action.setIdentifyId("-1");
         assertNull(action.getNctsElecidentify());
         assertEquals("success", action.edit());
         assertNotNull(action.getNctsElecidentify());
@@ -48,7 +48,7 @@ public class NctsElecidentifyActionTest extends BaseActionTestCase {
     public void testSave() throws Exception {
         MockHttpServletRequest request = new MockHttpServletRequest();
         ServletActionContext.setRequest(request);
-        action.setIdentifyId("-1L");
+        action.setIdentifyId("-1");
         assertEquals("success", action.edit());
         assertNotNull(action.getNctsElecidentify());
 
@@ -60,7 +60,7 @@ public class NctsElecidentifyActionTest extends BaseActionTestCase {
         nctsElecidentify.setIsValid(758308768);
         nctsElecidentify.setSiteDomains("LpWdNsPuSiSyNcRiWwUeNsRoHuReLuKrAbFzRqDuQeHcKrStQxPjQnUeRfSxMxOgFbCjHdFqHyQeFkAnOtTkPmFsKmGiYyCdPfKsZoNhWwJbCrQoQyBmDpQeUdZmSnEqLvZoBbBoHiHlBfUcDxGwOlPdUoOgMtPeYeXiKaRrAbBrFbSyMxTmItMyGnOpSsRyAyRoBxKq");
         nctsElecidentify.setSnbxh("EdUpOsGrMvQqCnStLaVjBzWaDqBoQb");
-        nctsElecidentify.setVersion(new Long("8212310337623334E8L"));
+        nctsElecidentify.setVersion(new Long("1"));
 
         action.setNctsElecidentify(nctsElecidentify);
 
@@ -75,7 +75,7 @@ public class NctsElecidentifyActionTest extends BaseActionTestCase {
         ServletActionContext.setRequest(request);
         action.setDelete("");
         NctsElecidentify nctsElecidentify = new NctsElecidentify();
-        nctsElecidentify.setIdentifyId("-2L");
+        nctsElecidentify.setIdentifyId("-2");
         action.setNctsElecidentify(nctsElecidentify);
         assertEquals("success", action.delete());
         assertNotNull(request.getSession().getAttribute("messages"));

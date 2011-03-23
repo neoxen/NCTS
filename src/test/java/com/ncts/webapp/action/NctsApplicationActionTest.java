@@ -93,7 +93,7 @@ public class NctsApplicationActionTest extends BaseActionTestCase {
         ServletActionContext.setRequest(request);
         action.setDelete("");
         NctsApplication nctsApplication = new NctsApplication();
-        nctsApplication.setApplyId("-2L");
+        nctsApplication.setApplyId("-2");
         action.setNctsApplication(nctsApplication);
         assertEquals("success", action.delete());
         assertNotNull(request.getSession().getAttribute("messages"));

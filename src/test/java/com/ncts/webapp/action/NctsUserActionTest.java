@@ -40,7 +40,7 @@ public class NctsUserActionTest extends BaseActionTestCase {
 
     public void testEdit() throws Exception {
         log.debug("testing edit...");
-        action.setUserId("-1L");
+        action.setUserId("-1");
         assertNull(action.getNctsUser());
         assertEquals("success", action.edit());
         assertNotNull(action.getNctsUser());
@@ -50,7 +50,7 @@ public class NctsUserActionTest extends BaseActionTestCase {
     public void testSave() throws Exception {
         MockHttpServletRequest request = new MockHttpServletRequest();
         ServletActionContext.setRequest(request);
-        action.setUserId("-1L");
+        action.setUserId("-1");
         assertEquals("success", action.edit());
         assertNotNull(action.getNctsUser());
 
@@ -79,7 +79,7 @@ public class NctsUserActionTest extends BaseActionTestCase {
         ServletActionContext.setRequest(request);
         action.setDelete("");
         NctsUser nctsUser = new NctsUser();
-        nctsUser.setUserId("-2L");
+        nctsUser.setUserId("-2");
         action.setNctsUser(nctsUser);
         assertEquals("success", action.delete());
         assertNotNull(request.getSession().getAttribute("messages"));
